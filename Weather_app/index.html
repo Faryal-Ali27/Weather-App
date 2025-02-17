@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 text-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 transition-all duration-300">
+
+  <div id="weather-container" class="bg-white bg-opacity-20 p-6 sm:p-8 rounded-lg shadow-lg text-center w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl transition-all duration-300">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-6">Weather App</h1>
+    
+    <div class="search-container mb-6 flex flex-col sm:flex-row items-center gap-2 w-full">
+      <input type="text" id="city-input" placeholder="Enter city name" class="p-2 rounded-lg text-black border border-gray-300 w-full sm:flex-1">
+      <button id="search-btn" class="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-all duration-300 w-full sm:w-auto">Search</button>
+    </div>
+    
+    <div id="weather-info" class="hidden">
+      <h2 id="city-name" class="text-2xl font-bold"></h2>
+      <div class="flex items-center justify-center mt-4">
+        <img id="weather-icon" src="" alt="Weather Icon" class="w-16 h-16">
+        <p id="temperature" class="text-3xl ml-4"></p>
+      </div>
+      <p id="weather-type" class="text-xl mt-4"></p>
+    </div>
+
+    <!-- 5-day Forecast Section -->
+    <div id="forecast-container" class="hidden mt-6">
+      <h3 class="text-2xl font-bold mb-4">5-Day Forecast</h3>
+      <div id="forecast" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center"></div>
+    </div>
+
+    <button id="theme-toggle" class="mt-6 bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition-all duration-300 flex items-center justify-center text-xl w-12 h-12">
+      🌙
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
